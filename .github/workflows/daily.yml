@@ -4,7 +4,6 @@ name: Daily Cron Job
 on:
   schedule:
     - cron: '*/5 * * * *'  # Every every 5 mins
-  workflow_dispatch:      # (Optional) Allow manual trigger
 
 jobs:
   run-script:
