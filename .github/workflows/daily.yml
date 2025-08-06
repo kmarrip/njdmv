@@ -3,7 +3,7 @@ name: Daily Cron Job
 
 on:
   schedule:
-    - cron: '0 5 * * *'  # Every day at 5 AM UTC
+    - cron: '*/5 * * * *'  # Every every 5 mins
   workflow_dispatch:      # (Optional) Allow manual trigger
 
 jobs:
@@ -21,3 +21,10 @@ jobs:
 
       - name: Run Python Script
         run: python3 scrap.py >> results.txt
+
+      
+      - name: Upload result as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: cron-output
+          path: results.txt
