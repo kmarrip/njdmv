@@ -20,4 +20,4 @@ jobs:
         run: pip3 install requests
 
       - name: Run Python Script
-        run: python3 scrap.py
+        run: python3 scrap.py >> results.txt
