@@ -1,0 +1,17 @@
+# .github/workflows/daily-cron.yml
+name: Daily Cron Job
+
+on:
+  schedule:
+    - cron: '0 5 * * *'  # Every day at 5 AM UTC
+  workflow_dispatch:      # (Optional) Allow manual trigger
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+
+      - name: Run Python Script
+        run: python3 scrap.py
