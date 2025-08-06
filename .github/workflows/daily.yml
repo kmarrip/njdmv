@@ -12,6 +12,12 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v4
+      
+      - name: Install BeautifulSoup
+        run: pip3 install beautifulsoup4
+
+      - name: Install requests
+        run: pip3 install requests
 
       - name: Run Python Script
         run: python3 scrap.py
